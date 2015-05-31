@@ -1,2 +1,8 @@
 d:\documents\visual studio 2013\Projects\AlgorithmCSharp\AlgorithmCSharp\bin\Debug\AlgorithmCSharp.exe.config
 D:\documents\GitHub\benkyo\Algorithm\C#\AlgorithmCSharp\AlgorithmCSharp\bin\Debug\AlgorithmCSharp.exe.config
+D:\documents\GitHub\benkyo\Algorithm\AlgorithmCSharp\AlgorithmCSharp\bin\Debug\AlgorithmCSharp.exe.config
+D:\documents\GitHub\benkyo\Algorithm\AlgorithmCSharp\AlgorithmCSharp\bin\Debug\AlgorithmCSharp.exe
+D:\documents\GitHub\benkyo\Algorithm\AlgorithmCSharp\AlgorithmCSharp\bin\Debug\AlgorithmCSharp.pdb
+D:\documents\GitHub\benkyo\Algorithm\AlgorithmCSharp\AlgorithmCSharp\obj\Debug\AlgorithmCSharp.csprojResolveAssemblyReference.cache
+D:\documents\GitHub\benkyo\Algorithm\AlgorithmCSharp\AlgorithmCSharp\obj\Debug\AlgorithmCSharp.exe
+D:\documents\GitHub\benkyo\Algorithm\AlgorithmCSharp\AlgorithmCSharp\obj\Debug\AlgorithmCSharp.pdb

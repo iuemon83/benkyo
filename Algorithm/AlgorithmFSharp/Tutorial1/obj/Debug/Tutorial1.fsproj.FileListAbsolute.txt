@@ -1,0 +1,8 @@
+D:\documents\GitHub\benkyo\Algorithm\AlgorithmFSharp\Tutorial1\bin\Debug\Tutorial1.XML
+D:\documents\GitHub\benkyo\Algorithm\AlgorithmFSharp\Tutorial1\bin\Debug\Tutorial1.exe
+D:\documents\GitHub\benkyo\Algorithm\AlgorithmFSharp\Tutorial1\bin\Debug\Tutorial1.pdb
+D:\documents\GitHub\benkyo\Algorithm\AlgorithmFSharp\Tutorial1\bin\Debug\FSharp.Core.dll
+D:\documents\GitHub\benkyo\Algorithm\AlgorithmFSharp\Tutorial1\bin\Debug\FSharp.Core.xml
+D:\documents\GitHub\benkyo\Algorithm\AlgorithmFSharp\Tutorial1\bin\Debug\ja\FSharp.Core.resources.dll
+D:\documents\GitHub\benkyo\Algorithm\AlgorithmFSharp\Tutorial1\obj\Debug\Tutorial1.exe
+D:\documents\GitHub\benkyo\Algorithm\AlgorithmFSharp\Tutorial1\obj\Debug\Tutorial1.pdb
