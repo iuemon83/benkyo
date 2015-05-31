@@ -1,0 +1,2 @@
+d:\documents\visual studio 2013\Projects\AlgorithmCSharp\AlgorithmCSharp\bin\Debug\AlgorithmCSharp.exe.config
+D:\documents\GitHub\benkyo\Algorithm\C#\AlgorithmCSharp\AlgorithmCSharp\bin\Debug\AlgorithmCSharp.exe.config
