@@ -1,11 +1,14 @@
 ﻿using System;
 
-namespace AlgorithmCSharp {
-    class Program {
-        static void Main(string[] args) {
+namespace AlgorithmCSharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
             // 魔法陣
             new Q1.Zentansaku().Start();
-            //new Q1.BackTrack().Start();
+            new Q1.BackTrack().Start();
 
             // n クイーン問題
             //new Q2.Zentansaku().Start(4);

@@ -1,25 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
-namespace AlgorithmCSharp {
+namespace AlgorithmCSharp
+{
     /// <summary>
     /// 魔法陣
     /// </summary>
-    class Q1 {
+    class Q1
+    {
         /// <summary>
         /// 全探索
         /// </summary>
-        public class Zentansaku {
+        public class Zentansaku
+        {
             private int count = 0;
             //private int answer = 0;
 
-            public void Start() {
+            public void Start()
+            {
                 var validPatternList = this.CreateJunretu(1, 9)
                     .Where(junretu => this.IsValid(junretu))
                     .ToArray();
 
-                foreach (var validPattern in validPatternList) {
+                foreach (var validPattern in validPatternList)
+                {
                     Console.WriteLine(string.Join(",", validPattern));
                 }
 
@@ -32,7 +36,8 @@ namespace AlgorithmCSharp {
             /// </summary>
             /// <param name="start"></param>
             /// <param name="last"></param>
-            private IEnumerable<int>[] CreateJunretu(int start, int last) {
+            private int[][] CreateJunretu(int start, int last)
+            {
                 return this.CreateJunretu(Enumerable.Range(start, last - start + 1).ToArray(), new int[0]);
             }
 
@@ -41,13 +46,15 @@ namespace AlgorithmCSharp {
             /// </summary>
             /// <param name="nokori"></param>
             /// <param name="junretu"></param>
-            private IEnumerable<int>[] CreateJunretu(IEnumerable<int> nokori, IEnumerable<int> junretu) {
+            private int[][] CreateJunretu(int[] nokori, int[] junretu)
+            {
                 this.count++;
                 if (!nokori.Any()) return new[] { junretu };
 
-                return nokori.SelectMany(x => {
-                    var nn = nokori.Where(n => n != x);
-                    var jj = junretu.Concat(new[] { x });
+                return nokori.SelectMany(x =>
+                {
+                    var nn = nokori.Where(n => n != x).ToArray();
+                    var jj = junretu.Concat(new[] { x }).ToArray();
 
                     return CreateJunretu(nn, jj);
                 })
@@ -59,9 +66,8 @@ namespace AlgorithmCSharp {
             /// </summary>
             /// <param name="junretu"></param>
             /// <returns></returns>
-            private bool IsValid(IEnumerable<int> junretu) {
-                var junretuArray = junretu.ToArray();
-
+            private bool IsValid(int[] junretu)
+            {
                 var wa = junretu[0] + junretu[1] + junretu[2];
 
                 // 各行、各列、対角線上の和が等しい(魔法陣として正しい)
@@ -78,14 +84,22 @@ namespace AlgorithmCSharp {
         /// <summary>
         /// バックトラック
         /// </summary>
-        public class BackTrack {
+        public class BackTrack
+        {
             private int count = 0;
-            private int answer = 0;
 
-            public void Start() {
-                this.CreateJunretu(1, 9);
-                Console.WriteLine("kotae:" + this.answer);
-                Console.WriteLine("kaisuu:" + this.count);
+            public void Start()
+            {
+                var validPatternList = this.CreateJunretu(1, 9)
+                    .ToArray();
+
+                foreach (var validPattern in validPatternList)
+                {
+                    Console.WriteLine(string.Join(",", validPattern));
+                }
+
+                Console.WriteLine("パターン数:" + validPatternList.Length);
+                Console.WriteLine("計算回数:" + this.count);
             }
 
             /// <summary>
@@ -93,8 +107,9 @@ namespace AlgorithmCSharp {
             /// </summary>
             /// <param name="start"></param>
             /// <param name="last"></param>
-            private void CreateJunretu(int start, int last) {
-                this.CreateJunretu(Enumerable.Range(start, last - start + 1).ToArray(), new int[0]);
+            private int[][] CreateJunretu(int start, int last)
+            {
+                return this.CreateJunretu(Enumerable.Range(start, last - start + 1).ToArray(), new int[0]);
             }
 
             /// <summary>
@@ -102,47 +117,62 @@ namespace AlgorithmCSharp {
             /// </summary>
             /// <param name="nokori"></param>
             /// <param name="junretu"></param>
-            private void CreateJunretu(int[] nokori, int[] junretu) {
+            private int[][] CreateJunretu(int[] nokori, int[] junretu)
+            {
                 this.count++;
-                if (junretu.Length == 6) {
+                if (junretu.Length == 6)
+                {
                     // 上から横2列
                     if (junretu[0] + junretu[1] + junretu[2]
-                        != junretu[3] + junretu[4] + junretu[5]) {
-                        return;
+                        != junretu[3] + junretu[4] + junretu[5])
+                    {
+                        return new int[0][];
                     }
                 }
-                else if (junretu.Length == 7) {
+                else if (junretu.Length == 7)
+                {
                     // 左縦とななめ
                     var total = junretu[0] + junretu[1] + junretu[2];
                     if (total != junretu[0] + junretu[3] + junretu[6]
-                        || total != junretu[2] + junretu[4] + junretu[6]) {
-                        return;
+                        || total != junretu[2] + junretu[4] + junretu[6])
+                    {
+                        return new int[0][];
                     }
                 }
-                else if (junretu.Length == 8) {
+                else if (junretu.Length == 8)
+                {
                     // 中央縦
                     if (junretu[0] + junretu[1] + junretu[2]
-                        != junretu[1] + junretu[4] + junretu[7]) {
-                        return;
+                        != junretu[1] + junretu[4] + junretu[7])
+                    {
+                        return new int[0][];
                     }
                 }
-                else if (junretu.Length == 9) {
+                else if (junretu.Length == 9)
+                {
                     // 横3列目と右縦とななめ
                     var total = junretu[0] + junretu[1] + junretu[2];
                     if (total != junretu[6] + junretu[7] + junretu[8]
                         || total != junretu[2] + junretu[5] + junretu[8]
-                        || total != junretu[0] + junretu[4] + junretu[8]) {
-                        return;
+                        || total != junretu[0] + junretu[4] + junretu[8])
+                    {
+                        return new int[0][];
                     }
-                    else {
-                        this.answer++;
-                        Console.WriteLine(string.Join(",", junretu));
+                    else
+                    {
+                        return new[] { junretu };
                     }
                 }
 
-                foreach (var x in nokori) {
-                    CreateJunretu(nokori.Where(n => n != x).ToArray(), junretu.Concat(new[] { x }).ToArray());
-                }
+                return nokori.SelectMany(x =>
+                {
+                    var nn = nokori.Where(n => n != x).ToArray();
+                    var jj = junretu.Concat(new[] { x }).ToArray();
+
+                    return CreateJunretu(nn, jj);
+                })
+                .Where(j => j.Any())
+                .ToArray();
             }
         }
     }
