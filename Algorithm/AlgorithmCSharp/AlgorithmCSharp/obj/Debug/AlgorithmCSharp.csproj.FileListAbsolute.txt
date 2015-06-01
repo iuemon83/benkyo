@@ -6,3 +6,9 @@ D:\documents\GitHub\benkyo\Algorithm\AlgorithmCSharp\AlgorithmCSharp\bin\Debug\A
 D:\documents\GitHub\benkyo\Algorithm\AlgorithmCSharp\AlgorithmCSharp\obj\Debug\AlgorithmCSharp.csprojResolveAssemblyReference.cache
 D:\documents\GitHub\benkyo\Algorithm\AlgorithmCSharp\AlgorithmCSharp\obj\Debug\AlgorithmCSharp.exe
 D:\documents\GitHub\benkyo\Algorithm\AlgorithmCSharp\AlgorithmCSharp\obj\Debug\AlgorithmCSharp.pdb
+D:\kaihatu\社内\勉強会\benkyo\Algorithm\AlgorithmCSharp\AlgorithmCSharp\bin\Debug\AlgorithmCSharp.exe.config
+D:\kaihatu\社内\勉強会\benkyo\Algorithm\AlgorithmCSharp\AlgorithmCSharp\obj\Debug\AlgorithmCSharp.exe
+D:\kaihatu\社内\勉強会\benkyo\Algorithm\AlgorithmCSharp\AlgorithmCSharp\obj\Debug\AlgorithmCSharp.pdb
+D:\kaihatu\社内\勉強会\benkyo\Algorithm\AlgorithmCSharp\AlgorithmCSharp\bin\Debug\AlgorithmCSharp.exe
+D:\kaihatu\社内\勉強会\benkyo\Algorithm\AlgorithmCSharp\AlgorithmCSharp\bin\Debug\AlgorithmCSharp.pdb
+D:\kaihatu\社内\勉強会\benkyo\Algorithm\AlgorithmCSharp\AlgorithmCSharp\obj\Debug\AlgorithmCSharp.csprojResolveAssemblyReference.cache
