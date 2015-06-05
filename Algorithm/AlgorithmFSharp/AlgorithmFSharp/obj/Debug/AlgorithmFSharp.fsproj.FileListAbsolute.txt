@@ -7,3 +7,12 @@ D:\documents\GitHub\benkyo\Algorithm\AlgorithmFSharp\AlgorithmFSharp\bin\Debug\F
 D:\documents\GitHub\benkyo\Algorithm\AlgorithmFSharp\AlgorithmFSharp\bin\Debug\ja\FSharp.Core.resources.dll
 D:\documents\GitHub\benkyo\Algorithm\AlgorithmFSharp\AlgorithmFSharp\obj\Debug\AlgorithmFSharp.exe
 D:\documents\GitHub\benkyo\Algorithm\AlgorithmFSharp\AlgorithmFSharp\obj\Debug\AlgorithmFSharp.pdb
+D:\kaihatu\社内\勉強会\アルゴリズム\rep\benkyo\Algorithm\AlgorithmFSharp\AlgorithmFSharp\bin\Debug\AlgorithmFSharp.XML
+D:\kaihatu\社内\勉強会\アルゴリズム\rep\benkyo\Algorithm\AlgorithmFSharp\AlgorithmFSharp\obj\Debug\AlgorithmFSharp.exe
+D:\kaihatu\社内\勉強会\アルゴリズム\rep\benkyo\Algorithm\AlgorithmFSharp\AlgorithmFSharp\obj\Debug\AlgorithmFSharp.pdb
+D:\kaihatu\社内\勉強会\アルゴリズム\rep\benkyo\Algorithm\AlgorithmFSharp\AlgorithmFSharp\bin\Debug\AlgorithmFSharp.exe.config
+D:\kaihatu\社内\勉強会\アルゴリズム\rep\benkyo\Algorithm\AlgorithmFSharp\AlgorithmFSharp\bin\Debug\AlgorithmFSharp.exe
+D:\kaihatu\社内\勉強会\アルゴリズム\rep\benkyo\Algorithm\AlgorithmFSharp\AlgorithmFSharp\bin\Debug\AlgorithmFSharp.pdb
+D:\kaihatu\社内\勉強会\アルゴリズム\rep\benkyo\Algorithm\AlgorithmFSharp\AlgorithmFSharp\bin\Debug\FSharp.Core.dll
+D:\kaihatu\社内\勉強会\アルゴリズム\rep\benkyo\Algorithm\AlgorithmFSharp\AlgorithmFSharp\bin\Debug\FSharp.Core.xml
+D:\kaihatu\社内\勉強会\アルゴリズム\rep\benkyo\Algorithm\AlgorithmFSharp\AlgorithmFSharp\bin\Debug\ja\FSharp.Core.resources.dll
