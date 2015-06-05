@@ -14,14 +14,21 @@ namespace AlgorithmCSharp
         public class Zentansaku
         {
             private int count = 0;
-            private int answer = 0;
 
             public void Start(int n)
             {
                 // 生成した順列の配列の番号を行、値を列の番号とする
-                this.CreateJunretu(1, n);
-                Console.WriteLine("pata-nsuu:" + this.answer);
-                Console.WriteLine("kaisuu:" + this.count);
+                var validPatternList = this.CreateJunretu(1, 9)
+                    .Where(junretu => this.IsValid(junretu))
+                    .ToArray();
+
+                foreach (var validPattern in validPatternList)
+                {
+                    Console.WriteLine(string.Join(",", validPattern));
+                }
+
+                Console.WriteLine("パターン数:" + validPatternList.Length);
+                Console.WriteLine("計算回数:" + this.count);
             }
 
             /// <summary>
@@ -29,9 +36,9 @@ namespace AlgorithmCSharp
             /// </summary>
             /// <param name="start"></param>
             /// <param name="last"></param>
-            private void CreateJunretu(int start, int last)
+            private int[][] CreateJunretu(int start, int last)
             {
-                this.CreateJunretu(Enumerable.Range(start, last - start + 1).ToArray(), new int[0]);
+                return this.CreateJunretu(Enumerable.Range(start, last - start + 1).ToArray(), new int[0]);
             }
 
             /// <summary>
@@ -39,24 +46,19 @@ namespace AlgorithmCSharp
             /// </summary>
             /// <param name="nokori"></param>
             /// <param name="junretu"></param>
-            private void CreateJunretu(int[] nokori, int[] junretu)
+            private int[][] CreateJunretu(int[] nokori, int[] junretu)
             {
                 this.count++;
-                if (!nokori.Any())
-                {
-                    if (this.IsValid(junretu))
-                    {
-                        this.answer++;
-                        Console.WriteLine(string.Join(",", junretu));
-                    }
+                if (!nokori.Any()) return new[] { junretu };
 
-                    return;
-                }
-
-                foreach (var x in nokori)
+                return nokori.SelectMany(x =>
                 {
-                    CreateJunretu(nokori.Where(n => n != x).ToArray(), junretu.Concat(new[] { x }).ToArray());
-                }
+                    var nn = nokori.Where(n => n != x).ToArray();
+                    var jj = junretu.Concat(new[] { x }).ToArray();
+
+                    return CreateJunretu(nn, jj);
+                })
+                .ToArray();
             }
 
             /// <summary>

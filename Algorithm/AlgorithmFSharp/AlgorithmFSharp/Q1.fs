@@ -15,7 +15,7 @@ module Zentansaku =
     let createJunretu start last = createJunretuRec [start..last] []
 
     // 魔法陣として正しい場合はTrue、そうでなければFalse
-    let isValid (junretu: int []) = 
+    let isValid (junretu : int list) = 
         let row1 = junretu.[0] + junretu.[1] + junretu.[2]
     
         junretu.[3] + junretu.[4] + junretu.[5] = row1
@@ -30,7 +30,6 @@ module Zentansaku =
         printfn "全探索"
         let patternCount =
             createJunretu 1 9
-            |> Seq.map Seq.toArray
             |> Seq.filter isValid
             |> Seq.map(fun x -> printfn "%A" x)
             |> Seq.length

@@ -14,7 +14,6 @@ namespace AlgorithmCSharp
         public class Zentansaku
         {
             private int count = 0;
-            //private int answer = 0;
 
             public void Start()
             {
