@@ -50,6 +50,7 @@
     <None Include="App.config" />
     <Compile Include="Q1.fs" />
     <Compile Include="Q2.fs" />
+    <Compile Include="Q3.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <PropertyGroup>

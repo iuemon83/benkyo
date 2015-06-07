@@ -3,69 +3,111 @@
 namespace AlgorithmCSharp
 {
     /// <summary>
-    /// 数当てゲーム
+    /// トロミノパズル
     /// </summary>
     class Q3
     {
-        private int count = 0;
+        private int trominoCount = 0;
+
+        // マスの状態(0: 何もない、-1: 欠けているマス、それ以外: トロミノ。同じ数字のマスが一つのトロミノを表す) [x][y]
+        private int[][] masuList;
 
         public void Start(int n)
         {
-            var min = 1d;
-            var max = (double)n;
+            var nn = (int)Math.Pow(2, n);
 
-            var km = new kazuateMachine((int)max);
-
-            kazuateMachine.Response res = kazuateMachine.Response.Empty;
-            while (res != kazuateMachine.Response.Right)
+            this.masuList = new int[nn][];
+            for (var i = 0; i < nn; i++)
             {
-                this.count++;
-
-                var ceil = (int)(Math.Ceiling((max - min) / 2d) + min);
-
-                res = km.IsAnswer(ceil);
-
-                if (res == kazuateMachine.Response.Big)
-                {
-                    min = ceil + 1;
-                }
-                else if (res == kazuateMachine.Response.Small)
-                {
-                    max = ceil;
-                }
+                this.masuList[i] = new int[nn];
             }
 
-            Console.WriteLine("正解！");
-            Console.WriteLine("試行回数：" + this.count);
+            // ランダムに壊れているマスを作成する
+            var ran = new Random();
+            var breakX = ran.Next(0, nn - 1);
+            var breakY = ran.Next(0, nn - 1);
+            this.masuList[breakX][breakY] = -1;
+
+            this.SetTromino(0, nn - 1, 0, nn - 1);
+            foreach (var row in this.masuList)
+            {
+                foreach (var masu in row)
+                {
+                    Console.Write(masu);
+                }
+
+                Console.WriteLine();
+            }
         }
 
         /// <summary>
-        /// 数当てマシーン
-        /// １～ｎの中から数をひとつランダムに選択し、それを当てさせる。
+        /// すべてのマスが埋まるまで、再帰的にトロミノをセットします。
         /// </summary>
-        class kazuateMachine
+        /// <param name="startX">セットするxの範囲の最小値</param>
+        /// <param name="endX">セットするxの範囲の最大値</param>
+        /// <param name="startY">セットするyの範囲の最小値</param>
+        /// <param name="endY">セットするyの範囲の最大値</param>
+        private void SetTromino(int startX, int endX, int startY, int endY)
         {
-            public enum Response
+            this.trominoCount++;
+
+            var length = endY - startY + 1;
+            var half = length / 2;
+
+            // 中心4マス
+            var centerLX = startX + half - 1;
+            var centerRX = startX + half;
+            var centerTY = startY + half - 1;
+            var centerBY = startY + half;
+
+            // すでに埋まっているマス
+            int breakX = 0;
+            int breakY = 0;
+            for (var i = startX; i <= endX; i++)
             {
-                Empty,
-                Big,
-                Small,
-                Right
+                for (var j = startY; j <= endY; j++)
+                {
+                    if (this.masuList[i][j] != 0)
+                    {
+                        breakX = i;
+                        breakY = j;
+                        break;
+                    }
+                }
             }
 
-            private readonly int answer;
-
-            public kazuateMachine(int n)
+            // トロミノをセットするマス(3マス)
+            if (((centerLX < breakX) || (centerTY < breakY))
+                && this.masuList[centerLX][centerTY] == 0)
             {
-                this.answer = new Random().Next(1, n);
+                this.masuList[centerLX][centerTY] = this.trominoCount;
             }
 
-            public Response IsAnswer(int x)
+            if (((centerLX < breakX) || (centerBY > breakY))
+                && this.masuList[centerLX][centerBY] == 0)
             {
-                if (this.answer > x) return Response.Big;
-                if (this.answer < x) return Response.Small;
-                return Response.Right;
+                this.masuList[centerLX][centerBY] = this.trominoCount;
             }
+
+            if (((centerRX > breakX) || (centerTY < breakY))
+                && this.masuList[centerRX][centerTY] == 0)
+            {
+                this.masuList[centerRX][centerTY] = this.trominoCount;
+            }
+
+            if (((centerRX > breakX) || (centerBY > breakY))
+                && this.masuList[centerRX][centerBY] == 0)
+            {
+                this.masuList[centerRX][centerBY] = this.trominoCount;
+            }
+
+            if (length == 2) return;
+
+            // 4分割して再帰
+            this.SetTromino(startX, startX + half - 1, startY, startY + half - 1);
+            this.SetTromino(startX, startX + half - 1, startY + half, endY);
+            this.SetTromino(startX + half, endX, startY, startY + half - 1);
+            this.SetTromino(startX + half, endX, startY + half, endY);
         }
     }
 }
