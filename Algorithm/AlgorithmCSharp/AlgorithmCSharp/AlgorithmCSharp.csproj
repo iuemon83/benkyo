@@ -47,9 +47,15 @@
     <Compile Include="Q2.cs" />
     <Compile Include="Kazuate.cs" />
     <Compile Include="Q3.cs" />
+    <Compile Include="Q4.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Q4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
