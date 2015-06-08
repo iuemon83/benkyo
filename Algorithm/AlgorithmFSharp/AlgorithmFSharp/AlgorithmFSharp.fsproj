@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Compile Include="FizzBuzz.fs" />
     <Compile Include="Q1.fs" />
     <Compile Include="Q2.fs" />
     <Compile Include="Q3.fs" />

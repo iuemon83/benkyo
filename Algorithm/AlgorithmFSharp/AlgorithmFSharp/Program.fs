@@ -1,7 +1,7 @@
 ﻿module AlgorithmFSharp
 open System
 
-FizzBuzz.Start(20) |> ignore
+//FizzBuzz.Start(20) |> ignore
 
 //Q1.Zentansaku.start() |> ignore
 //Q1.BackTrack.start() |> ignore
