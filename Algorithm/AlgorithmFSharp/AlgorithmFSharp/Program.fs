@@ -9,6 +9,8 @@ open System
 //Q2.Zentansaku.start 4 |> ignore
 //Q2.BackTrack.start 4 |> ignore
 
-Q3.start 3 |> ignore
+//Q3.start 3 |> ignore
+
+Q4.start "Q4.txt" |> ignore
 
 Console.ReadLine() |> ignore

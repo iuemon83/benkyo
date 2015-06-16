@@ -21,6 +21,11 @@ namespace AlgorithmCSharp
             }
         }
 
+        /// <summary>
+        /// 単語の一覧をアナグラム別にまとめます。
+        /// </summary>
+        /// <param name="wordList"></param>
+        /// <returns></returns>
         private IGrouping<string, string>[] ComputeAnagramGroupList(IEnumerable<string> wordList)
         {
             return wordList
