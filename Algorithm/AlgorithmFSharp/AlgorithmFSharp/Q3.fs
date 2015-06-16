@@ -1,4 +1,5 @@
-﻿module Q3
+﻿// トロミノ
+module Q3
 
 open System
 
