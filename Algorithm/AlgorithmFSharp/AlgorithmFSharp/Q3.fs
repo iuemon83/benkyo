@@ -72,9 +72,7 @@ let rec setTromino (gridList:State [][]) startX endX startY endY =
     // トロミノをセット
     let trominoNumber = getNewTrominoNumber()
     setTrominoCoordList
-    |> Seq.toArray
-    |> Array.map(fun (x, y) -> gridList.[x].[y] <- trominoNumber)
-    |> ignore
+    |> Seq.iter(fun (x, y) -> gridList.[x].[y] <- trominoNumber)
 
     let centerLX, centerRX, centerBY, centerTY = getCenter startX endX startY endY
 
@@ -106,6 +104,7 @@ let start (n: int) =
 
         displayText.PadLeft 2
 
-    gridList |> Array.map(fun row -> row |> Array.map(fun state -> state |> stateToString) |> printfn "%A")
+    gridList
+        |> Array.iter(fun row -> row |> Array.map stateToString |> printfn "%A")
 
 

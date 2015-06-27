@@ -76,8 +76,6 @@ module BackTrack =
         printfn "バックトラック"
         let patternCount =
             createJunretu 1 9 isValid
-//            |> Seq.map Seq.toArray
-//            |> Seq.filter isValid
             |> Seq.map(fun x -> printfn "%A" x)
             |> Seq.length
 

@@ -12,5 +12,4 @@ let start filePath =
     let anagramGroupList = computeAnagramGroupList wordList
 
     anagramGroupList
-    |> Seq.map(fun anagramGroup -> printfn "%A : %A" (fst anagramGroup) ((snd anagramGroup) |> (fun word -> System.String.Join(", ", word))))
-    |> Seq.toList
+    |> Seq.iter(fun anagramGroup -> printfn "%A : %A" (fst anagramGroup) ((snd anagramGroup) |> (fun word -> System.String.Join(", ", word))))
